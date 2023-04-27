@@ -21,21 +21,13 @@ const CartPage: React.FC = () => {
           <>
             <h2 className={styles.cart__title}>Pizza Cart</h2>
             <ul className={styles.cart__list}>
-              {cart.cartItems.map(
-                ({ id, image, title, quantity, totalPrice }: any) => {
-                  return (
-                    <li className={styles.cart__item} key={id}>
-                      <CartItem
-                        id={id}
-                        image={image}
-                        title={title}
-                        quantity={quantity}
-                        price={totalPrice}
-                      />
-                    </li>
-                  );
-                }
-              )}
+              {cart.cartItems.map(({ id }: any) => {
+                return (
+                  <li className={styles.cart__item} key={id}>
+                    <CartItem id={id} />
+                  </li>
+                );
+              })}
 
               <li className={styles.order__container}>
                 <h3

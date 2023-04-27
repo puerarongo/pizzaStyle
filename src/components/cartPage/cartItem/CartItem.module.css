@@ -30,8 +30,19 @@
   width: 600px;
 }
 
-.quantity {
+.incrementAndDecrement {
+  display: flex;
+  align-items: center;
+  text-align: center;
   margin: auto auto auto 0;
+}
+
+.decrement__button {
+  margin-right: 20px;
+}
+
+.increment__button {
+  margin-left: 20px;
 }
 
 .price {
@@ -44,6 +55,10 @@
   font-weight: 500;
   line-height: 16px;
   color: rgb(49, 39, 39);
+}
+
+.quantity {
+  margin: 0;
 }
 
 .button {

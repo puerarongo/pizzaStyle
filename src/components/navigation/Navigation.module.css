@@ -36,28 +36,84 @@
   transform: scale(1.2);
 }
 
-.link {
+.link,
+.link__active {
   font-size: 22px;
   font-weight: 600;
   color: #ffffff;
   text-decoration: none;
 }
 
+.link__active,
+.link__active .svg__cart {
+  color: #e7e7e7;
+  fill: #e7e7e7;
+}
+
+.link::after,
+.link__active::after {
+  display: block;
+  content: "";
+  margin-top: 8px;
+  width: inherit;
+  height: 4px;
+  background-color: #cd212a;
+  border-radius: 2px;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+}
+
+.link__active::after,
+.link:hover::after,
+.link:active::after {
+  opacity: 1;
+}
+
 .link:not(:last-child) {
   margin-right: 40px;
 }
 
-.link:hover {
+.link:hover,
+.link__active:hover {
   color: #e7e7e7;
 }
 
-.svg {
+.svg__cart,
+.count__icon {
+  position: relative;
+}
+
+.count__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 65%;
+  right: -5%;
+  content: "";
+  background-color: #cd212a;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 10;
+}
+
+.svg__cart {
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   fill: #ffffff;
 }
 
-.svg:hover {
+.count__icon:hover .svg__cart {
   fill: #e7e7e7;
+}
+
+.count__icon:hover .count__text {
+  background-color: #f10a15;
 }

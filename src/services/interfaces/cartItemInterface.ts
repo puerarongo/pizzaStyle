@@ -1,9 +1,5 @@
 interface ICartItem {
-  id: Number;
-  image: String;
-  title: String;
-  quantity: Number;
-  price: Number;
+  id: number;
 }
 
 export default ICartItem;
