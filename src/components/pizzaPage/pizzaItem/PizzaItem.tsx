@@ -79,7 +79,7 @@ const PizzaItem: React.FC<IProduct> = ({
         <div className={styles.detail}>
           <h3 className={styles.title}>{title}</h3>
           <p className={styles.description}>{description}</p>
-          <p className={styles.price}>{`Price: $ ${price}`}</p>
+          <p className={styles.price}>{`Price: ${price} UAH`}</p>
         </div>
         {!cart.cartItems.find((el: IProduct) => el.id === id) ? (
           <Button

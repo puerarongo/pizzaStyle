@@ -17,14 +17,16 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <HashRouter>
-        <ThemeProvider
-          breakpoints={["xxxl", "xxl", "xl", "lg", "md", "sm", "xs", "xxs"]}
-          minBreakpoint="xxs"
-        >
-          <App />
-        </ThemeProvider>
-      </HashRouter>
+      <PersistGate loading={null} persistor={persistor}>
+        <HashRouter>
+          <ThemeProvider
+            breakpoints={["xxxl", "xxl", "xl", "lg", "md", "sm", "xs", "xxs"]}
+            minBreakpoint="xxs"
+          >
+            <App />
+          </ThemeProvider>
+        </HashRouter>
+      </PersistGate>
     </Provider>
   </React.StrictMode>
 );

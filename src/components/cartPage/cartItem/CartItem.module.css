@@ -1,0 +1,53 @@
+.container {
+  padding: 6px 8px;
+  display: flex;
+  height: 100px;
+  border: 1px solid rgb(49, 39, 39, 40%);
+  border-radius: 4px;
+}
+
+.img {
+  width: 100px;
+  margin-right: 30px;
+  border-radius: 4px;
+}
+
+.container__into {
+  margin-left: auto;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 16px;
+  color: rgb(49, 39, 39);
+  margin: auto auto auto 0;
+}
+
+.into {
+  display: flex;
+  margin-left: auto;
+  width: 600px;
+}
+
+.quantity {
+  margin: auto auto auto 0;
+}
+
+.price {
+  margin: auto 100px auto auto;
+}
+
+.price,
+.quantity {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 16px;
+  color: rgb(49, 39, 39);
+}
+
+.button {
+  height: 60px;
+  width: 80px;
+  margin: auto 0 auto 100px;
+}
