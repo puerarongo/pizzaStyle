@@ -3,18 +3,29 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./components/App";
 import reportWebVitals from "./reportWebVitals";
+import ThemeProvider from "react-bootstrap/ThemeProvider";
 
 // *
 import { HashRouter } from "react-router-dom";
+import persistor, { store } from "./redux/store";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <HashRouter>
-      <App />
-    </HashRouter>
+    <Provider store={store}>
+      <HashRouter>
+        <ThemeProvider
+          breakpoints={["xxxl", "xxl", "xl", "lg", "md", "sm", "xs", "xxs"]}
+          minBreakpoint="xxs"
+        >
+          <App />
+        </ThemeProvider>
+      </HashRouter>
+    </Provider>
   </React.StrictMode>
 );
 

@@ -1,0 +1,13 @@
+.main__title {
+  text-align: center;
+  margin: 50px 0;
+  color: #008c45;
+}
+
+.grid__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 18px;
+  gap: 18px;
+  margin-bottom: 50px;
+}
