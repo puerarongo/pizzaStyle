@@ -11,9 +11,11 @@ const Navigation: React.FC = () => {
     <header className={styles.header}>
       <nav className={styles.nav}>
         <div className={styles.logo__container}>
-          <svg className={styles.svg__logo}>
-            <use href={svgPath.pizza + "#pizza"}></use>
-          </svg>
+          <NavLink to="/">
+            <svg className={styles.svg__logo}>
+              <use href={svgPath.pizza + "#pizza"}></use>
+            </svg>
+          </NavLink>
 
           <NavLink
             className={({ isActive }) =>
