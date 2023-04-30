@@ -5,6 +5,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../redux/slices/cartSlice";
 import { Button } from "react-bootstrap";
 import CartItem from "./cartItem/CartItem";
+import { Notify } from "notiflix/build/notiflix-notify-aio";
+
+Notify.init({
+  success: {
+    background: "#c5c5c5",
+    textColor: "#fff",
+    notiflixIconColor: "#fff",
+  },
+});
 
 const CartPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -12,6 +21,7 @@ const CartPage: React.FC = () => {
 
   const orderHandler = () => {
     dispatch(cartActions.clearCart());
+    Notify.success("Order successfully completed");
   };
 
   return (
@@ -36,7 +46,12 @@ const CartPage: React.FC = () => {
                 <h3
                   className={styles.total__amount}
                 >{`Total: ${cart.totalAmount} UAH`}</h3>
-                <Button variant="success" type="button" onClick={orderHandler}>
+                <Button
+                  variant="success"
+                  type="button"
+                  className={styles.button}
+                  onClick={orderHandler}
+                >
                   Make an order
                 </Button>
               </li>
@@ -46,7 +61,7 @@ const CartPage: React.FC = () => {
           <h2 className={styles.title__empty}>
             Please, choose pizza
             <Link to="/" className={styles.link__empty}>
-              here !
+              here!
             </Link>
           </h2>
         )}
